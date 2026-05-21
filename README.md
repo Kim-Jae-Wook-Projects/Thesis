@@ -15,8 +15,9 @@ Faculty : Computer Science (Факультет Компьютерных Наук
 Educational Program : Data Science (Науки о данных)
 
 
+## 🎯 Тема : Автоматизированная генерация чата с управляемой тональностью в прямых трансляциях
 ## 🎯 Title : Automated Sentiment-Controlled Chat Generation in Live Streaming
-##  🎯 Тема : Автоматизированная генерация чата с управляемой тональностью в прямых трансляциях
+
 
 
 A multi-track architecture for automated real-time chat generation in Korean live streaming environments. Runs entirely on local hardware without cloud dependency.
