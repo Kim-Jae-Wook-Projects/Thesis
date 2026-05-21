@@ -39,14 +39,16 @@ The system targets SOOP, a Korean live streaming platform, and runs on a single 
 
 ## 📊 Key Results
 
-| Metric | Method 1 (multi-track) |
-|---|---|
-| Average response latency | 1.51 seconds |
-| Malformed output rate | 0% |
-| Speedup vs EXAONE 3.5 7.8B baseline | ~253x |
-| Multi-rater naturalness vs 7.8B baseline | no statistically significant difference |
+Four methods compared on identical 110 input messages.
 
-Multi-rater human evaluation involved 20 participants and 880 ratings per method.
+| Method | Latency | Malformed | Naturalness (1 to 5) |
+|---|---|---|---|
+| **Method 1 (multi-track)** | 1.51 s | 0 | 3.36 |
+| Method 2 (EXAONE 4.0 1.2B baseline) | 2.01 s | 17 | 2.54 |
+| Method 3 (EXAONE 3.5 2.4B baseline) | 5.36 s | 0 | 3.40 |
+| Method 4 (EXAONE 3.5 7.8B baseline) | 382.06 s | 0 | 3.51 |
+
+Method 1 is the fastest of the four methods with zero malformed outputs. Its naturalness is statistically equivalent to both the same-size 2.4B baseline (Method 3) and the 3.25 times larger 7.8B baseline (Method 4), based on Bonferroni-corrected Wilcoxon tests with p = 1.000 and p = 0.570 respectively. Multi-rater human evaluation involved 20 participants and 880 ratings per method.
 
 ---
 
@@ -55,20 +57,26 @@ Multi-rater human evaluation involved 20 participants and 880 ratings per method
 ```
 Thesis/
 ├── README.md                            ← this file
-├── source_code/
-│   ├── README.md                        ← module overview
-│   ├── (core pipeline modules)
-│   ├── (data acquisition modules)
-│   └── for_Track3_Test/
-│       ├── README.md                    ← Track 3 sub-experiment variants
-│       └── (relaxed-config modules)
-├── inputs/                              evaluation input sets
-├── results/                             per-method evaluation outputs
-├── data_analysis/                       keyword frequency artifacts (TSV)
-├── survey/                              anonymized multi-rater scores
-├── stats/                               statistical analysis scripts
-├── environment.yml                      Miniforge conda environment
-└── requirements.txt                     pip dependencies
+├── compatibility_issue/
+│   └── DoNotReadMe.md
+└── source_code/
+    ├── for_Track3_Test/
+    │   ├── DoNotReadMe.md               ← Track 3 sub-experiment variants
+    │   ├── pipeline_for_T3_Test.py
+    │   └── run_realtime_focus_csv_for_T3_Test.py
+    ├── ChatDataExtraction_main.py
+    ├── DoNotReadMe.md                   ← module overview
+    ├── Track1Rule.py
+    ├── Track3Rule.py
+    ├── backends.py
+    ├── baseline_fullgen.py
+    ├── chat_collector_main.py
+    ├── chat_sender_focus.py
+    ├── chat_storage_monitor.py
+    ├── pipeline.py
+    ├── resources.py
+    ├── run_realtime_focus_csv.py
+    └── runner_fullgen_csv.py
 ```
 
 ---
@@ -83,6 +91,5 @@ Thesis/
 
 ## 📦 Where to Look Next
 
-- For module-level details and how the pipeline is wired together, see `source_code/README.md`.
-- For the relaxed-config variants used in Section 4 evaluations, see `source_code/for_Track3_Test/README.md`.
-- For raw evaluation data and statistical analysis, see the `results/`, `survey/`, and `stats/` directories.
+- For module-level details and how the pipeline is wired together, see `source_code/DoNotReadMe.md`.
+- For the relaxed-config variants used in Section 4 evaluations, see `source_code/for_Track3_Test/DoNotReadMe.md`.
