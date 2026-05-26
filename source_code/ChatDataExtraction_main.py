@@ -14,7 +14,7 @@ from chat_collector_main import ChatCSVCollector
 from chat_storage_monitor import ChatStorageMonitor, is_system_saved_after_message
 
 CHROMEDRIVER_PATH = "/usr/local/bin/chromedriver"
-CHAT_POPUP_URL = "https://vod.sooplive.com/player/161303645"    # specific channel
+CHAT_POPUP_URL = "https://"    # specific channel
 
 
 POLL_INTERVAL = 2.0
