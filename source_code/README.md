@@ -19,13 +19,13 @@ Implementation of the multi-track architecture and baseline runners used in the 
 │                          │                                      │
 │              ┌───────────▼───────────┐                          │
 │              │     pipeline.py       │  ← Core processing       │
-│              │ (TrackRouter + Pipeline)                         │
+│              │(TrackRouter+Pipeline) │                          │
 │              └──┬────────────────┬───┘                          │
 │                 │                │                              │
 │       ┌─────────▼─────┐  ┌──────▼──────────┐                    │
 │       │ Track1Rule.py │  │ Track3Rule.py   │                    │
-│       │  (16 rules,   │  │ (POS/NEG prob,  │                    │
-│       │   instant)    │  │  punchlines)    │                    │
+│       │(rules,instant)│  │ (POS/NEG prob,  │                    │
+│       │               │  │  punchlines)    │                    │
 │       └───────────────┘  └──────┬──────────┘                    │
 │                                 │                               │
 │                        ┌────────▼─────────────────┐             │
