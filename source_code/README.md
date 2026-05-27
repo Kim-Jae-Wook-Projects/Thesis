@@ -30,7 +30,7 @@ Implementation of the multi-track architecture and baseline runners used in the 
 │                                 │                               │
 │                        ┌────────▼─────────────────┐             │
 │                        │      backends.py         │             │
-│                        │ (EXAONE 3.5 2.4B Instruct)             │
+│                        │(EXAONE 3.5 2.4B Instruct)│             │
 │                        └──────────────────────────┘             │
 │                                                                 │
 │  ┌──────────────┐  ┌────────────────────────┐                   │
